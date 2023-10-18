@@ -1,0 +1,14 @@
+/home/julian/chess/bin/Debug/net7.0/chess
+/home/julian/chess/bin/Debug/net7.0/chess.deps.json
+/home/julian/chess/bin/Debug/net7.0/chess.runtimeconfig.json
+/home/julian/chess/bin/Debug/net7.0/chess.dll
+/home/julian/chess/bin/Debug/net7.0/chess.pdb
+/home/julian/chess/obj/Debug/net7.0/chess.GeneratedMSBuildEditorConfig.editorconfig
+/home/julian/chess/obj/Debug/net7.0/chess.AssemblyInfoInputs.cache
+/home/julian/chess/obj/Debug/net7.0/chess.AssemblyInfo.cs
+/home/julian/chess/obj/Debug/net7.0/chess.csproj.CoreCompileInputs.cache
+/home/julian/chess/obj/Debug/net7.0/chess.dll
+/home/julian/chess/obj/Debug/net7.0/refint/chess.dll
+/home/julian/chess/obj/Debug/net7.0/chess.pdb
+/home/julian/chess/obj/Debug/net7.0/chess.genruntimeconfig.cache
+/home/julian/chess/obj/Debug/net7.0/ref/chess.dll
