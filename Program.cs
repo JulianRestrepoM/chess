@@ -17,6 +17,8 @@ while(true) {
     // var move = Inputs.ParseInput(moveInput);
     (int[] origin, int[] destination) = Inputs.ParseInput(moveInput);
 
-    Console.WriteLine($"Move {origin[0]},{origin[1]} {destination[0]},{destination[1]}");
+    // Console.WriteLine($"Move {origin[0]},{origin[1]} {destination[0]},{destination[1]}");
+    theBoard.ExecuteMove(origin, destination);
+    theBoard.DrawBoard();
     
 }

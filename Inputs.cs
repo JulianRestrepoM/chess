@@ -33,7 +33,7 @@ public class Inputs {
         if(input is null) {
             return false;
         }
-        string regexPattern = @"^[1-8],[1-8] [1-8],[1-8]$";
+        string regexPattern = @"^[0-7],[0-7] [0-7],[0-7]$";
 
         Match m = Regex.Match(input, regexPattern, RegexOptions.Compiled);
         

@@ -103,6 +103,16 @@ public class Board {
            currSpace.Art = AsciiArt.GenerateArt(currSpace.OcupiedBy, currSpace);
         }
     }
+    public bool ExecuteMove(int[] origin, int[] destination) {
+
+        Space originSpace = this.Spaces[origin[0],origin[1]];
+        Space destinationSpace = this.Spaces[destination[0],destination[1]];
+
+        destinationSpace.OcupiedBy = originSpace.OcupiedBy;
+        originSpace.OcupiedBy = null;
+
+        return true;
+    }
 }
 
 public class Space {
