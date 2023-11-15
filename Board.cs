@@ -1,19 +1,23 @@
 public class Board {
     public Space[,] Spaces;
+    public const int boardSize = 8;
     private static string FilePath = Path.Combine(Directory.GetCurrentDirectory(),
                                                              "currentBoard.txt");
 
     public Board() {
         bool isBlack = true;
-        Space[,] spaces = new Space[8, 8];
-        for(int i = 0; i < 8; i++) {
+        Space[,] spaces = new Space[boardSize, boardSize];
+        for(int i = 0; i < boardSize; i++) {
             isBlack = !isBlack;
-            for(int j = 0; j < 8; j++) {
+            for(int j = 0; j < boardSize; j++) {
                 spaces[i,j] = new Space(isBlack, new int[2] {i, j});
                 isBlack = !isBlack;
             }
         }
         this.Spaces = spaces;
+    }
+    public Space getSpaceAt(int[] coordinate) {
+         return this.Spaces[coordinate[0],coordinate[1]];
     }
     public void FillBoard() {
         FillPawns();
@@ -26,7 +30,7 @@ public class Board {
     }
 
     private void FillPawns() {
-        for(int i = 0; i < 8; i++) {
+        for(int i = 0; i < boardSize; i++) {
             Space currTopSpace = this.Spaces[i,1];
             currTopSpace.OcupiedBy = new Pawn(true);
             if(currTopSpace.IsBlack) {
@@ -105,13 +109,15 @@ public class Board {
     }
     public bool ExecuteMove(int[] origin, int[] destination) {
 
-        Space originSpace = this.Spaces[origin[0],origin[1]];
-        Space destinationSpace = this.Spaces[destination[0],destination[1]];
-
-        destinationSpace.OcupiedBy = originSpace.OcupiedBy;
-        originSpace.OcupiedBy = null;
-
-        return true;
+        Space originSpace = getSpaceAt(origin);
+        Space destinationSpace = getSpaceAt(destination);
+        if(Piece.ValidMove(this, originSpace, destinationSpace)) {
+            destinationSpace.OcupiedBy = originSpace.OcupiedBy;
+            originSpace.OcupiedBy = null;
+            return true;
+        }
+        Console.WriteLine("Move is invalid");
+        return false;
     }
 }
 
